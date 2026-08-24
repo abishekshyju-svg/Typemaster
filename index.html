@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Test and improve your typing speed with our premium Typing Speed Tester. Track WPM, accuracy, and mistakes in real-time with a beautiful dark UI.">
+    <meta name="keywords" content="typing speed test, WPM test, typing practice, keyboard speed, typing accuracy">
+    <title>Typing Speed Tester - Test Your Typing Speed Online</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-keyboard"></i>
+                <span>TypeMaster</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#typing-test">Test</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-effects">
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+            <div class="hero-orb hero-orb-3"></div>
+        </div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-bolt"></i>
+                    <span>Premium Typing Experience</span>
+                </div>
+                <h1 class="hero-title">
+                    Typing Speed<br>
+                    <span class="gradient-text">Tester</span>
+                </h1>
+                <p class="hero-description">
+                    Measure your typing speed and accuracy with our premium testing tool. 
+                    Track your WPM, identify mistakes, and improve your keyboard skills 
+                    with real-time feedback and detailed analytics.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#typing-test" class="btn btn-primary">
+                        <i class="fas fa-play"></i>
+                        Start Typing Test
+                    </a>
+                    <a href="#features" class="btn btn-secondary">
+                        <i class="fas fa-info-circle"></i>
+                        Learn More
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">50K+</span>
+                        <span class="hero-stat-label">Tests Taken</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">120+</span>
+                        <span class="hero-stat-label">WPM Average</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">98%</span>
+                        <span class="hero-stat-label">User Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="keyboard-illustration">
+                    <div class="key-row">
+                        <span class="key">Q</span>
+                        <span class="key">W</span>
+                        <span class="key">E</span>
+                        <span class="key">R</span>
+                        <span class="key">T</span>
+                        <span class="key">Y</span>
+                    </div>
+                    <div class="key-row">
+                        <span class="key">A</span>
+                        <span class="key">S</span>
+                        <span class="key active-key">D</span>
+                        <span class="key">F</span>
+                        <span class="key">G</span>
+                        <span class="key">H</span>
+                    </div>
+                    <div class="key-row">
+                        <span class="key">Z</span>
+                        <span class="key">X</span>
+                        <span class="key">C</span>
+                        <span class="key">V</span>
+                        <span class="key">B</span>
+                        <span class="key">N</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typing Test Section -->
+    <section class="typing-test-section" id="typing-test">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Typing Speed <span class="gradient-text">Test</span></h2>
+                <p class="section-subtitle">Select your timer, start typing, and see your results in real-time</p>
+            </div>
+
+            <!-- Timer Mode Selection -->
+            <div class="timer-selection">
+                <button class="timer-btn active" data-time="30">30s</button>
+                <button class="timer-btn" data-time="60">60s</button>
+                <button class="timer-btn" data-time="120">2min</button>
+                <button class="timer-btn" data-time="300">5min</button>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="stat-value" id="wpm">0</div>
+                    <div class="stat-label">WPM</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="stat-value" id="accuracy">100%</div>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-times-circle"></i>
+                    </div>
+                    <div class="stat-value" id="mistakes">0</div>
+                    <div class="stat-label">Mistakes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-value" id="timer">30s</div>
+                    <div class="stat-label">Time Left</div>
+                </div>
+            </div>
+
+            <!-- Typing Area -->
+            <div class="typing-area">
+                <div class="text-display" id="textDisplay"></div>
+                <textarea class="typing-input" id="typingInput" placeholder="Start typing here..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+            </div>
+
+            <!-- Controls -->
+            <div class="test-controls">
+                <button class="btn btn-primary" id="restartBtn">
+                    <i class="fas fa-redo"></i>
+                    Restart Test
+                </button>
+                <button class="btn btn-secondary" id="newTextBtn">
+                    <i class="fas fa-random"></i>
+                    New Paragraph
+                </button>
+            </div>
+
+            <!-- Result Modal -->
+            <div class="result-modal" id="resultModal">
+                <div class="result-content">
+                    <div class="result-header">
+                        <h3>Test Complete!</h3>
+                        <button class="result-close" id="resultClose">&times;</button>
+                    </div>
+                    <div class="result-stats">
+                        <div class="result-stat">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span class="result-value" id="finalWpm">0</span>
+                            <span class="result-label">Words Per Minute</span>
+                        </div>
+                        <div class="result-stat">
+                            <i class="fas fa-bullseye"></i>
+                            <span class="result-value" id="finalAccuracy">0%</span>
+                            <span class="result-label">Accuracy</span>
+                        </div>
+                        <div class="result-stat">
+                            <i class="fas fa-times-circle"></i>
+                            <span class="result-value" id="finalMistakes">0</span>
+                            <span class="result-label">Total Mistakes</span>
+                        </div>
+                        <div class="result-stat">
+                            <i class="fas fa-font"></i>
+                            <span class="result-value" id="finalChars">0</span>
+                            <span class="result-label">Characters Typed</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" id="tryAgainBtn">
+                        <i class="fas fa-redo"></i>
+                        Try Again
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Powerful <span class="gradient-text">Features</span></h2>
+                <p class="section-subtitle">Everything you need to master your typing skills</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Real-Time WPM</h3>
+                    <p>Track your words per minute as you type with instant live updates and precise calculations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-crosshairs"></i>
+                    </div>
+                    <h3>Accuracy Tracking</h3>
+                    <p>Character-by-character validation ensures you know exactly where your mistakes happen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-stopwatch"></i>
+                    </div>
+                    <h3>Multiple Timer Modes</h3>
+                    <p>Choose from 30 seconds to 5 minutes. Pick the duration that suits your practice needs.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-random"></i>
+                    </div>
+                    <h3>Random Paragraphs</h3>
+                    <p>Fresh content every time you test. Never practice the same text twice in a row.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Fully Responsive</h3>
+                    <p>Practice on any device — desktop, tablet, or mobile. Seamless experience everywhere.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Premium Dark UI</h3>
+                    <p>Easy on the eyes with our carefully crafted dark theme. Perfect for long practice sessions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section" id="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Improve <span class="gradient-text">Typing Speed?</span></h2>
+                <p class="section-subtitle">Faster typing unlocks productivity in every area of digital life</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-number">01</div>
+                    <h3>Boost Productivity</h3>
+                    <p>Professionals who type faster complete emails, reports, and documents in half the time. Every WPM increase translates directly to saved hours per week.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-number">02</div>
+                    <h3>Career Advancement</h3>
+                    <p>Many tech jobs require 60+ WPM. Data entry, programming, content writing, and customer support roles all value fast, accurate typing as a core skill.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-number">03</div>
+                    <h3>Better Communication</h3>
+                    <p>When typing comes naturally, you can focus on what to say rather than how to type it. Your messages become clearer, more thoughtful, and more effective.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-number">04</div>
+                    <h3>Reduced Fatigue</h3>
+                    <p>Touch typists experience less physical strain and mental fatigue. Proper technique means less hunting and pecking, fewer errors, and a more comfortable workflow.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-number">05</div>
+                    <h3>Academic Success</h3>
+                    <p>Students who type fast can take better notes, write essays more efficiently, and complete online exams within time limits with ease.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-number">06</div>
+                    <h3>Digital Confidence</h3>
+                    <p>In a world driven by keyboards, fast typing gives you confidence in online conversations, coding, social media, and creative projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It <span class="gradient-text">Works</span></h2>
+                <p class="section-subtitle">Three simple steps to measure and improve your typing</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Choose Timer</h3>
+                    <p>Select your preferred test duration — 30 seconds, 1 minute, 2 minutes, or 5 minutes.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Start Typing</h3>
+                    <p>Begin typing the displayed paragraph. The timer starts automatically with your first keystroke.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>View Results</h3>
+                    <p>See your WPM, accuracy, and mistakes instantly. Track progress and aim for improvement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+                <p class="section-subtitle">Got questions? We have answers</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is a good typing speed?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>An average typist speeds around 40 WPM. A good typing speed is 60-80 WPM. Professional typists often reach 80-100+ WPM. Speed above 100 WPM is considered exceptional.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How is WPM calculated?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>WPM (Words Per Minute) is calculated by dividing the total number of characters typed by 5 (standard word length) and then dividing by the time elapsed in minutes.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How can I improve my typing speed?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Practice regularly, focus on accuracy first, learn touch typing, maintain proper posture, use all ten fingers, and gradually increase speed. Consistency is key — even 15 minutes daily makes a big difference.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Does the timer start automatically?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! The timer begins as soon as you start typing your first character. This ensures accurate measurement of your actual typing duration without idle time.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is this tool free to use?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! TypeMaster is completely free with no registration required. Take unlimited tests, practice as much as you want, and track your improvement over time.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I use this on mobile devices?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, the website is fully responsive and works on all devices. However, for the best typing practice experience, we recommend using a physical keyboard on a desktop or laptop.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About <span class="gradient-text">TypeMaster</span></h2>
+                <p class="section-subtitle">Built for typists, by typists</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>TypeMaster was created with a simple mission: to help people improve their typing speed and accuracy in the most enjoyable way possible. Whether you're a student preparing for exams, a professional looking to boost productivity, or a developer who lives at the keyboard — this tool is built for you.</p>
+                    <p>Our typing test uses carefully curated paragraphs covering various topics to ensure a realistic typing experience. The character-by-character validation system provides precise feedback, and our live statistics help you understand your performance in real-time.</p>
+                    <p>We believe that faster typing shouldn't require expensive software or complicated setups. That's why TypeMaster is free, works in any browser, and requires zero installation. Just open, type, and improve.</p>
+                </div>
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>No registration required</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>100% free forever</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Works offline</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>No ads during test</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Privacy focused</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Open to everyone</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+                <p class="section-subtitle">Have feedback, suggestions, or questions? We'd love to hear from you</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email Us</h4>
+                        <p>support@typemaster.com</p>
+                    </div>
+                    <div class="contact-info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Location</h4>
+                        <p>Chennai, Tamil Nadu, India</p>
+                    </div>
+                    <div class="contact-info-card">
+                        <i class="fas fa-clock"></i>
+                        <h4>Response Time</h4>
+                        <p>Within 24 hours</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <i class="fas fa-keyboard"></i>
+                        <span>TypeMaster</span>
+                    </a>
+                    <p>The premium typing speed tester built for professionals, students, and anyone who wants to type faster and more accurately.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#typing-test">Typing Test</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#faq">Help Center</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#" id="privacyLink">Privacy Policy</a></li>
+                        <li><a href="#" id="termsLink">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TypeMaster. All rights reserved. Built with <i class="fas fa-heart"></i> for typists worldwide.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div class="modal" id="privacyModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Privacy Policy</h3>
+                <button class="modal-close" data-modal="privacyModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Last Updated:</strong> August 2026</p>
+                <h4>Information We Collect</h4>
+                <p>TypeMaster does not collect, store, or transmit any personal data. All typing test results are processed locally in your browser and are never sent to any server.</p>
+                <h4>Cookies</h4>
+                <p>We may use minimal cookies for analytics purposes only (such as Google Analytics) to understand how visitors use the website. No personally identifiable information is tracked.</p>
+                <h4>Third-Party Services</h4>
+                <p>We may display advertisements through Google AdSense. These services may use cookies to serve ads based on your browsing history. You can opt out of personalized advertising through your Google Ads settings.</p>
+                <h4>Data Security</h4>
+                <p>Since we don't collect personal data, there is no risk of data breach from our end. Your typing results stay on your device.</p>
+                <h4>Contact</h4>
+                <p>If you have questions about this privacy policy, please contact us at support@typemaster.com.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div class="modal" id="termsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Terms of Service</h3>
+                <button class="modal-close" data-modal="termsModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Last Updated:</strong> August 2026</p>
+                <h4>Acceptance of Terms</h4>
+                <p>By accessing and using TypeMaster, you agree to be bound by these Terms of Service. If you do not agree, please discontinue use of the website.</p>
+                <h4>Use of Service</h4>
+                <p>TypeMaster is provided free of charge for personal and educational use. You may use the typing test tool for practice, assessment, and improvement of your typing skills.</p>
+                <h4>Intellectual Property</h4>
+                <p>All content, design, and code on this website are the property of TypeMaster. You may not copy, reproduce, or distribute any part of this website without written permission.</p>
+                <h4>Limitation of Liability</h4>
+                <p>TypeMaster is provided "as is" without warranties of any kind. We are not liable for any damages arising from the use of this website.</p>
+                <h4>Modifications</h4>
+                <p>We reserve the right to modify these terms at any time. Continued use of the website constitutes acceptance of updated terms.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
